@@ -8,8 +8,29 @@
     <title>VueTest-1</title>
 </head>
 <body>
-    <div>
-
+    <div id="app">
+        <div v-on:click="yincang">
+            {{click_button}}
+        </div>
+        <div v-if="user_type">
+            {{user_name}}
+        </div>
     </div>
 </body>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                click_button:"Click Here",
+                user_name:'小明',
+                user_type:false
+            }
+        },
+        methods:{
+            yincang(){
+                this.user_type = !this.user_type;
+            },
+        }
+    }).mount('#app');
+</script>
 </html>
