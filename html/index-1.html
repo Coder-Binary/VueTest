@@ -1,36 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../script/vue.global.js"></script>
     <title>VueTest-1</title>
+    <style>
+        html {
+            border-radius: 1px;
+        }
+        .d1{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(145, 145, 145);
+            position: relative;
+            z-index: 1;
+        }
+        .d1_2{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            position: absolute;
+            right: -15px;
+            z-index: 0 !important;
+        }
+
+    </style>
 </head>
+
 <body>
     <div id="app">
-        <div v-on:click="yincang">
+        <div class="d1">
+            <div class="d1_2">
+                <div class="d1_3">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- <div v-on:click="yincang">
             {{click_button}}
         </div>
         <div v-if="user_type">
             {{user_name}}
         </div>
+        <input type="text" v-model='insert'>
+        <div>{{insert}}</div> -->
     </div>
 </body>
 <script>
     Vue.createApp({
-        data(){
-            return{
-                click_button:"Click Here",
-                user_name:'小明',
-                user_type:false
+        data() {
+            return {
+                click_button: "Click Here",
+                user_name: '小明',
+                user_type: false,
+                insert: "666"
             }
         },
         methods:{
-            yincang(){
+            yincang() {
                 this.user_type = !this.user_type;
             },
         }
     }).mount('#app');
+
 </script>
+
 </html>
