@@ -32,7 +32,7 @@
 
 <body>
     <div id="app">
-        <div class="d1">
+        <div v-on:click="test" class="d1">
             <div class="d1_2">
                 <div class="d1_3">
 
@@ -63,6 +63,12 @@
         methods:{
             yincang() {
                 this.user_type = !this.user_type;
+            },
+            test(){
+              alert("test")
+            },
+            cleartest(){
+                alert("clear");
             },
         }
     }).mount('#app');
